@@ -32,6 +32,8 @@ enum TransactionType {
   INVESTMENT
   TICKET_FOOD
   TICKET_FUEL
+  EXPENSE_TICKET_FUEL
+  EXPENSE_TICKET_FOOD
 }
 
 enum TransactionCategory {
