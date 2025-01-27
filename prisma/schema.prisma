@@ -46,6 +46,7 @@ enum TransactionCategory {
   SALARY
   EDUCATION
   OTHER
+  TICKET
 }
 
 enum TransactionPaymentMethod {
