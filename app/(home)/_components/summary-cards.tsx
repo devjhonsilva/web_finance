@@ -5,83 +5,31 @@ import {
   WalletIcon,
 } from "lucide-react";
 import SummaryCard from "./summary-card";
-import { db } from "@/app/_lib/prisma";
 
 interface SummaryCardsProps {
   month: string;
+  balance: number;
+  balanceTicket: number;
+  depositsTotal: number;
+  depositFoodTicket: number;
+  depositFuelTicket: number;
+  expensesTotal: number;
+  expenseFoodTicket: number;
+  expenseFuelTicket: number;
+  investmentsTotal: number;
 }
 
-const SummaryCards = async ({ month }: SummaryCardsProps) => {
-  const where = {
-    date: {
-      gte: new Date(`2025-${month}-01`),
-      lt: new Date(`2025-${month}-31`),
-    },
-  };
-
-  const investmentsTotal = Number(
-    (
-      await db.transaction.aggregate({
-        where: { ...where, type: "INVESTMENT" },
-        _sum: { amount: true },
-      })
-    )?._sum?.amount,
-  );
-  const depositsTotal = Number(
-    (
-      await db.transaction.aggregate({
-        where: { ...where, type: "DEPOSIT" },
-        _sum: { amount: true },
-      })
-    )?._sum?.amount,
-  );
-  const expensesTotal = Number(
-    (
-      await db.transaction.aggregate({
-        where: { ...where, type: "EXPENSE" },
-        _sum: { amount: true },
-      })
-    )?._sum?.amount,
-  );
-  const balance = depositsTotal - investmentsTotal - expensesTotal;
-
-  const depositFoodTicket = Number(
-    (
-      await db.transaction.aggregate({
-        where: { ...where, type: "TICKET_FOOD" },
-        _sum: { amount: true },
-      })
-    )?._sum?.amount,
-  );
-  const depositFuelTicket = Number(
-    (
-      await db.transaction.aggregate({
-        where: { ...where, type: "TICKET_FUEL" },
-        _sum: { amount: true },
-      })
-    )?._sum?.amount,
-  );
-  const expenseFoodTicket = Number(
-    (
-      await db.transaction.aggregate({
-        where: { ...where, type: "EXPENSE_TICKET_FOOD" },
-        _sum: { amount: true },
-      })
-    )?._sum?.amount,
-  );
-  const expenseFuelTicket = Number(
-    (
-      await db.transaction.aggregate({
-        where: { ...where, type: "EXPENSE_TICKET_FUEL" },
-        _sum: { amount: true },
-      })
-    )?._sum?.amount,
-  );
-  const balanceTicket =
-    depositFoodTicket +
-    depositFuelTicket -
-    (expenseFoodTicket + expenseFuelTicket);
-
+const SummaryCards = async ({
+  balance,
+  balanceTicket,
+  investmentsTotal,
+  expenseFoodTicket,
+  expenseFuelTicket,
+  expensesTotal,
+  depositFoodTicket,
+  depositFuelTicket,
+  depositsTotal,
+}: SummaryCardsProps) => {
   return (
     <div className="space-y-6">
       <SummaryCard
