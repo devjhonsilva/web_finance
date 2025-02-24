@@ -17,6 +17,17 @@ export const TRANSACTION_CATEGORY = {
   TICKET: "Ticket",
 };
 
+export const TRANSACTION_PAYMENT_METHOD_ICONS = {
+  [TransactionPaymentMethod.BANK_SLIP]: "bank-slip.svg",
+  [TransactionPaymentMethod.BANK_TRANSFER]: "bank-transfer.svg",
+  [TransactionPaymentMethod.CASH]: "money.svg",
+  [TransactionPaymentMethod.CREDIT_CARD]: "credit-card.svg",
+  [TransactionPaymentMethod.DEBIT_CARD]: "debit-card.svg",
+  [TransactionPaymentMethod.OTHER]: "other.svg",
+  [TransactionPaymentMethod.PIX]: "pix.svg",
+  [TransactionPaymentMethod.TICKET_CARD]: "credit-card.svg",
+};
+
 export const TRANSACTION_METHOD = {
   TICKET_CARD: "Cartão Ticket",
   CREDIT_CARD: "Cartão Crédito",
