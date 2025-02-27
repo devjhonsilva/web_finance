@@ -41,6 +41,7 @@ import {
 } from "../_constants/transactions";
 import { DatePicker } from "./ui/date-picker";
 import { upsertTransaction } from "../_actions/_upsert-transactions";
+import { useEffect } from "react";
 
 interface UpersertTransactionDialogProps {
   isOpen: boolean;
@@ -101,6 +102,12 @@ const UpsertTransactionDialog = ({
   };
 
   const isUpdate = Boolean(transactionId);
+
+  useEffect(() => {
+    if (defaultValues) {
+      form.reset(defaultValues);
+    }
+  }, [defaultValues, form]);
 
   return (
     <Dialog
