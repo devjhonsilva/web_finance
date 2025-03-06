@@ -8,7 +8,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../../_components/ui/select";
+<<<<<<< HEAD
 import { useEffect, useState } from "react";
+=======
+>>>>>>> 3b6a0d44cefec156ff4ede66cb7af5e1f4cef479
 
 const MONTH_OPTIONS = [
   { value: "01", label: "January" },
@@ -29,6 +32,7 @@ const TimeSelect = () => {
   const { push } = useRouter();
   const searchParams = useSearchParams();
   const month = searchParams.get("month");
+<<<<<<< HEAD
 
   const currentMonth = new Date().toISOString().slice(5, 7);
   const [selectedMonth, setSelectedMonth] = useState("");
@@ -52,6 +56,15 @@ const TimeSelect = () => {
       onValueChange={handleMonthChange}
       value={selectedMonth}
       defaultValue={month ?? ""}
+=======
+  const handleMonthChange = (month: string) => {
+    push(`/?month=${month}`);
+  };
+  return (
+    <Select
+      onValueChange={(value) => handleMonthChange(value)}
+      defaultValue={month || ""}
+>>>>>>> 3b6a0d44cefec156ff4ede66cb7af5e1f4cef479
     >
       <SelectTrigger className="w-[150px] rounded-full">
         <SelectValue placeholder="Mês" />
