@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { auth, clerkClient } from "@clerk/nextjs/server";
 import Navbar from "../_components/nav-bar";
 import { redirect } from "next/navigation";
@@ -6,18 +5,12 @@ import { Card, CardContent, CardHeader } from "../_components/ui/card";
 import { CheckIcon, XIcon } from "lucide-react";
 import AcquirePlanButton from "./_components/acquire_plan-button";
 import { Badge } from "../_components/ui/badge";
-=======
-import { auth } from "@clerk/nextjs/server";
-import Navbar from "../_components/nav-bar";
-import { redirect } from "next/navigation";
->>>>>>> 3b6a0d44cefec156ff4ede66cb7af5e1f4cef479
 
 const SubscriptionPage = async () => {
   const { userId } = await auth();
   if (!userId) {
     return redirect("/login");
   }
-<<<<<<< HEAD
 
   const user = await clerkClient().users.getUser(userId);
   const hasPremiumPlan = user.publicMetadata.subscriptionPlan == "premium";
@@ -82,9 +75,6 @@ const SubscriptionPage = async () => {
       </div>
     </>
   );
-=======
-  return <Navbar />;
->>>>>>> 3b6a0d44cefec156ff4ede66cb7af5e1f4cef479
 };
 
 export default SubscriptionPage;
