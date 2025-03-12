@@ -34,14 +34,14 @@ const SummaryCards = async ({
 }: SummaryCardsProps) => {
   return (
     <div className="space-y-4">
-      <SummaryCard
-        icon={<WalletIcon size={18} />}
-        title="Saldo"
-        amount={balance}
-        size="large"
-        usercanAddTransaction={userCanAddTransaction}
-      />
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-4 gap-4">
+        <SummaryCard
+          icon={<WalletIcon size={18} />}
+          title="Saldo"
+          amount={balance}
+          size="large"
+          usercanAddTransaction={userCanAddTransaction}
+        />
         <SummaryCard
           icon={<PiggyBankIcon size={16} />}
           title="Investido"
