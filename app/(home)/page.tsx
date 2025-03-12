@@ -55,7 +55,7 @@ const Home = async ({ searchParams: { month } }: HomeProps) => {
               {...dashboard}
               userCanAddTransaction={userCanAddTransaction}
             />
-            <div className="grid grid-cols-3 grid-rows-1 gap-6 overflow-auto">
+            <div className="grid h-full w-full grid-cols-3 grid-rows-1 gap-6">
               <TransactionsPierChart {...dashboard} />
               <ExpensesPerCategory
                 expensesPerCategory={dashboard.totalExpenseperCategory}
