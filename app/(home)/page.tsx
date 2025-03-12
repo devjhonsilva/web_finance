@@ -48,9 +48,9 @@ const Home = async ({ searchParams: { month } }: HomeProps) => {
           </div>
         </div>
 
-        <div className="grid h-full grid-cols-[2fr,1fr] gap-4 overflow-hidden">
+        <div className="grid h-full grid-cols-[3fr,1fr] gap-4 overflow-hidden">
           <div className="flex flex-col gap-6 overflow-hidden">
-            <div className="grid h-full grid-cols-3 grid-rows-1 gap-6 overflow-hidden">
+            <div className="grid h-full gap-6 overflow-hidden">
               <SummaryCards
                 month={month}
                 {...dashboard}
