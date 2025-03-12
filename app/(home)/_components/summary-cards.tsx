@@ -33,7 +33,7 @@ const SummaryCards = async ({
   userCanAddTransaction,
 }: SummaryCardsProps) => {
   return (
-    <div className="space-y-6">
+    <div className="max-h-[450px] space-y-6">
       <SummaryCard
         icon={<WalletIcon size={18} />}
         title="Saldo"
