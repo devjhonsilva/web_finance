@@ -30,7 +30,6 @@ const SummaryCards = async ({
   depositFoodTicket,
   depositFuelTicket,
   depositsTotal,
-  userCanAddTransaction,
 }: SummaryCardsProps) => {
   return (
     <div className="space-y-4">
@@ -40,7 +39,6 @@ const SummaryCards = async ({
           title="Saldo"
           amount={balance}
           size="large"
-          usercanAddTransaction={userCanAddTransaction}
         />
         <SummaryCard
           icon={<PiggyBankIcon size={14} />}

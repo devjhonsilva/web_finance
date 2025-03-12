@@ -1,4 +1,3 @@
-import AddTransactionBtn from "@/app/_components/add-transaction-btn";
 import { Card, CardHeader, CardContent } from "@/app/_components/ui/card";
 import { ReactNode } from "react";
 
@@ -7,7 +6,6 @@ interface SummaryCardProps {
   title: string;
   amount: number;
   size?: "small" | "large";
-  usercanAddTransaction?: boolean;
 }
 
 const SummaryCard = ({
@@ -15,17 +13,11 @@ const SummaryCard = ({
   title,
   amount,
   size = "small",
-  usercanAddTransaction,
 }: SummaryCardProps) => {
   return (
     <Card className={`${size === "large" ? "bg-white bg-opacity-5" : ""}`}>
       <CardHeader className="flex-row items-center gap-4">
-        <div className="rounded-lg bg-white bg-opacity-[3%] p-2">
-          {icon}
-          {size === "large" && (
-            <AddTransactionBtn userCanAddTransaction={usercanAddTransaction} />
-          )}
-        </div>
+        <div className="rounded-lg bg-white bg-opacity-[3%] p-2">{icon}</div>
         <p
           className={`${size === "small" ? "text-muted-foreground" : "text-white opacity-70"}`}
         >
