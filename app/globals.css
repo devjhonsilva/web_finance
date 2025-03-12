@@ -73,9 +73,9 @@ body {
     @apply border-border;
   }
   html {
-    @apply h-screen;
+    @apply h-full;
   }
   body {
-    @apply h-screen bg-background text-foreground;
+    @apply h-full bg-background text-foreground;
   }
 }
