@@ -27,7 +27,7 @@ export default function RootLayout({
             baseTheme: dark,
           }}
         >
-          <div className="flex h-full max-h-[1080px] flex-col overflow-hidden">
+          <div className="flex h-full max-h-[800px] flex-col overflow-hidden">
             {children}
           </div>
         </ClerkProvider>
