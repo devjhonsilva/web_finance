@@ -20,7 +20,12 @@ const SummaryCard = ({
   return (
     <Card className={`${size === "large" ? "bg-white bg-opacity-5" : ""}`}>
       <CardHeader className="flex-row items-center gap-4">
-        <div className="rounded-lg bg-white bg-opacity-[3%] p-2">{icon}</div>
+        <div className="rounded-lg bg-white bg-opacity-[3%] p-2">
+          {icon}
+          {size === "large" && (
+            <AddTransactionBtn userCanAddTransaction={usercanAddTransaction} />
+          )}
+        </div>
         <p
           className={`${size === "small" ? "text-muted-foreground" : "text-white opacity-70"}`}
         >
@@ -28,15 +33,12 @@ const SummaryCard = ({
         </p>
       </CardHeader>
       <CardContent className="flex justify-between">
-        <p className={`font-bold ${size === "small" ? "text-xl" : "text-2xl"}`}>
+        <p className={`font-bold ${size === "small" ? "text-lg" : "text-2xl"}`}>
           {Intl.NumberFormat("pt-BR", {
             style: "currency",
             currency: "BRL",
           }).format(amount)}
         </p>
-        {size === "large" && (
-          <AddTransactionBtn userCanAddTransaction={usercanAddTransaction} />
-        )}
       </CardContent>
     </Card>
   );
