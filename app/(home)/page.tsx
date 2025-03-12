@@ -34,7 +34,7 @@ const Home = async ({ searchParams: { month } }: HomeProps) => {
   return (
     <>
       <Navbar />
-      <div className="flex h-screen flex-col space-y-6 overflow-hidden p-6">
+      <div className="flex h-full flex-col space-y-6 overflow-hidden p-6">
         <div className="flex justify-between">
           <h1 className="text-2xl font-bold">Dashboard</h1>
           <div className="flex items-center gap-3">
@@ -55,7 +55,7 @@ const Home = async ({ searchParams: { month } }: HomeProps) => {
               {...dashboard}
               userCanAddTransaction={userCanAddTransaction}
             />
-            <div className="grid w-full flex-shrink-0 grid-cols-3 grid-rows-1 gap-6 overflow-hidden">
+            <div className="grid max-h-[600px] w-full flex-shrink-0 grid-cols-3 grid-rows-1 gap-6 overflow-hidden">
               <TransactionsPierChart {...dashboard} />
               <ExpensesPerCategory
                 expensesPerCategory={dashboard.totalExpenseperCategory}
