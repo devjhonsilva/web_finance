@@ -36,26 +36,26 @@ const SummaryCards = async ({
     <div className="space-y-4">
       <div className="grid grid-cols-4 gap-4">
         <SummaryCard
-          icon={<WalletIcon size={18} />}
+          icon={<WalletIcon size={16} />}
           title="Saldo"
           amount={balance}
           size="large"
           usercanAddTransaction={userCanAddTransaction}
         />
         <SummaryCard
-          icon={<PiggyBankIcon size={16} />}
+          icon={<PiggyBankIcon size={14} />}
           title="Investido"
           amount={investmentsTotal}
           size="small"
         />
         <SummaryCard
-          icon={<TrendingUpIcon size={16} className="text-primary" />}
+          icon={<TrendingUpIcon size={14} className="text-primary" />}
           title="Receita"
           amount={depositsTotal}
           size="small"
         />
         <SummaryCard
-          icon={<TrendingDownIcon size={16} className="text-red-500" />}
+          icon={<TrendingDownIcon size={14} className="text-red-500" />}
           title="Depesas"
           amount={expensesTotal}
           size="small"
