@@ -48,14 +48,14 @@ const Home = async ({ searchParams: { month } }: HomeProps) => {
           </div>
         </div>
 
-        <div className="grid h-full grid-cols-[1.5fr,1fr] gap-4 overflow-hidden">
-          <div className="flex w-full flex-col gap-4 overflow-hidden">
+        <div className="grid h-full grid-cols-[2fr,1fr] gap-4 overflow-hidden">
+          <div className="flex flex-col gap-6 overflow-hidden">
             <SummaryCards
               month={month}
               {...dashboard}
               userCanAddTransaction={userCanAddTransaction}
             />
-            <div className="grid w-full grid-cols-3 grid-rows-1 gap-6 overflow-hidden">
+            <div className="grid h-full grid-cols-3 grid-rows-1 gap-6 overflow-hidden">
               <TransactionsPierChart {...dashboard} />
               <ExpensesPerCategory
                 expensesPerCategory={dashboard.totalExpenseperCategory}
